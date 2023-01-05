@@ -141,4 +141,13 @@ Use `:!` seguindo do comando. Por exemplo:
 
 `:!ls` usa ls no terminal
 
+## Navigation Files
+
+Use `vim <directory>` para abrir no modo de navegação de arquivos
+
+> Proximos comandos são apenas ativos no modo de navegação de arquivos
+
+Use `d` para criar uma pasta
+Use `%` para criar um arquivo
+
 stop 634
