@@ -2,17 +2,9 @@
 
 O Vim tem 4 modos: Normal, Inserção, Seleção e ?.
 
-Movimentação:
+## NAVIGATION
 
 Use botões de cursor ou `h` para esquerda, `j` para baixo, `k` para cima e `l` para o lado.
-
-Fechar a janela (window):
-
-Use `:q<Enter>`
-
-Sair do vim:
-
-Use `:qa!<Enter>` (cuidado, todas as mudanças serão perdidas.)
 
 Pular para uma palavra (subject, acho que é links):
 
@@ -20,19 +12,31 @@ Use `CTRL-]` em cima da palavra.
 
 `CTRL-O` para voltar aonde vc estava
 
+## EXIT
+
+Fechar a janela (window):
+
+Use `:q<Enter>` para fechar a janela ou sair do arquivo.
+
+Use `:qa!<Enter>` para sair do vim sem salvar as mudanças.
+
+Use `CTRL-C` para sai do command-line sem executar nada.
+
 ## TEXT EDITING
 
-Deletar:
+### DELETE
 
 Use `x` para deletar uma letra (character).
 
-Inserir:
+## INSERT
 
-Use `i` para entrar no mode de inserção onde está o cursor e use `<ESC>` para sair.
+Use `i` para entrar no mode de inserção **onde está o cursor**.
 
-Adicionar:
+Use `a` para entrar no modo de inserção **depois do cursor**.
 
-Use `a` para entrar no modo de inserção no final da linha e use `<ESC>` para sair.
+Use `o` para entrar no modo de inserção em uma **linha nova abaixo**.
+
+Use `O` para entrar no modo de inserção em uma **linha nova acima**.
 
 ## EDITING A FILE
 
@@ -85,6 +89,8 @@ Use `p` para colar a ultima coisa deletada depois do cursor.
 
 Use `r` para na palavra que vc quer substituir, e depois para digite qual palavra que vc quer.
 
+Use `R` para substituir **mais de uma** palavra.
+
 ## CHANGE
 
 Use `ce` para deletar o resto da palavra do cursor atual e digitar oq quer. (`c` change `e` edit)
@@ -106,6 +112,9 @@ Use `/` seguido da palavra para pesquisar PARA FRENTE e `$` para pesquisar PARA 
 - `n` para navegar para proxima mesma palavra.
 - `N` para navegar na direção oposta.
 - `CTRL-O` para voltar aonde vc estava.
+
+Para ignorar case (lowercase, capital-case, uppercase), use `:set ic` (ic = ignore case).
+Para desabilitar o ignore-case, use `:set noic`.
 
 ## Match
 
@@ -141,7 +150,24 @@ Use `:!` seguindo do comando. Por exemplo:
 
 `:!ls` usa ls no terminal
 
-## Navigation Files
+## SELECTING TEXT TO WRITE
+
+1. Digite `v` para entrar no modo visual
+2. Digite `:`, vai aparecer `:'<.'>`
+3. Digite `w TEST` quando não existe um arquivo TEST. Vai ficar assim: `<,'>w TEST`, pressione `<ENTER>`
+4. Vim irá criar um arquivo TEST com o conteúdo selecionado, use `:!ls` para ver.
+
+## COPY
+
+Entre no modo visual com `v`, selecione o texto e use `y` (yanks = copies) para copiar.
+
+## RETRIEVING AND MERGING FILES
+
+Para copiar o conteúdo de outro arquivo, use `:r <arquivo>`
+
+Você pode ler o output de um **external command**. Por exemplo, `:r !;s` ler o output do comando ls e cola no vim.
+
+## NAVIGATION FILES
 
 Use `vim <directory>` para abrir no modo de navegação de arquivos
 
@@ -150,4 +176,37 @@ Use `vim <directory>` para abrir no modo de navegação de arquivos
 Use `d` para criar uma pasta
 Use `%` para criar um arquivo
 
-stop 634
+## HELP
+
+Use `:help` ou `<F1>` para entrar no help.
+
+Use `:help <command>` para pesquisar sobre um comando ou outra coisa, exemplos:
+
+- `:help c_CTRL-ID`
+- `:help w`
+- `:help insert-index`
+- `:help user-manual`
+- `:help vimrc-intro`
+
+## WINDOW
+
+Para pular para outra janela aberta, use `CTRL-W+CTRL-W`
+
+## CREATE A STARTUP SCRIPT
+
+crie um **vimrc** no home
+
+- `:e ~/.vimrc` para Unix.
+- `:e $VIM/_vimrc` para Windows.
+
+O vim vem com um exemplo em `$VIMRUNTIME/vimrc_example.vim`, você pode copia ele com `:r`. Para mais informações, use `:help vimrc-intro`
+
+## AUTOCOMPLETE
+
+Use `CTRL-D` ou `<TAB>` para autocomplete.
+
+Pode testar com `:e` + (`CTRL-D` | `<TAB>`)
+
+## FIM
+
+Fim do vimtutor, agora continua no `:help user-manual`.
