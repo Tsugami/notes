@@ -6,11 +6,9 @@ O Vim tem 4 modos: Normal, Inserção, Seleção e ?.
 
 Use botões de cursor ou `h` para esquerda, `j` para baixo, `k` para cima e `l` para o lado.
 
-Pular para uma palavra (subject, acho que é links):
-
 Use `CTRL-]` em cima da palavra.
 
-`CTRL-O` para voltar aonde vc estava
+Use `CTRL-O` para voltar aonde vc estava.
 
 ## EXIT
 
