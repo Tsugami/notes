@@ -66,3 +66,7 @@ guu ....... converte a linha para minúsculo
 gUiw ...... converte a palavra atual para maiúsculo
 ~ ......... altera o case do caractere atual
 
+# File Navigator
+
+% ...... Cria um arquivo novo
+d ...... Cria uma pasta nova
